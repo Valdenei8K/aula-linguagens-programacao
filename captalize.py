@@ -1,11 +1,6 @@
-nome_completo = input("Digite seu nome e sobrenome: ")
+nome = input("Digite seu nome :")
 
 
-nome, sobrenome = nome_completo.split()
-
-
-#nome_formatado = nome.capitalize()
-#sobrenome_formatado = sobrenome.capitalize()
 
 
 nome_formatado = nome_formatado[0].lower() + nome_formatado.upper()[1:]
