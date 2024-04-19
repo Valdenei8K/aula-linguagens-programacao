@@ -19,6 +19,8 @@ def marca_posicao(jogador, linha, coluna):
     else:
         print("Posição inválida. Escolha outra.")
         return False
+    
+from verificador import verificar_ganhador
 
 def main():
     exibir_menu()
@@ -33,11 +35,24 @@ def main():
                 for linha_tabuleiro in tabuleiro:
                     arquivo.write("|".join(linha_tabuleiro) + "\n")
                     arquivo.write("-----\n")
+                    
+            ganhador = verificar_ganhador(tabuleiro)
+            
+            if ganhador:
+                if ganhador == "Empate":
+                    print("O jogo terminou em empate!")
+                else:
+                    imprimir_tabuleiro()
+                    print(f"O jogador {ganhador} ganhou!")
+
+                break  # Encerra o jogo
+            elif " " not in [item for linha in tabuleiro for item in linha]:
+                print("O jogo terminou em empate!")
+                break  # Encerra o jogo
             
             if jogador_atual == "X":
                 jogador_atual = "O"
             else:
                 jogador_atual = "X"
-
 # Rodando o jogo
 main()
