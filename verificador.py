@@ -1,4 +1,4 @@
-def verificar_ganhador():
+def verificar_ganhador(tabuleiro):
     # Verificando linhas e colunas
     for i in range(3):
         # Verificando linhas
@@ -19,3 +19,6 @@ def verificar_ganhador():
         if " " in linha:
             return None  # Ainda há espaços em branco, o jogo continua
     return "Empate"  # Todos os espaços foram preenchidos e não há vencedor
+
+def atirar_ganhador():
+    print("ganhou")
